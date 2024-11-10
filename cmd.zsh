@@ -4,6 +4,11 @@ alias ps='ps -ef | grep'
 alias sude='sudoedit'
 alias free='free -h'
 
+# git相关
+alias gitc='git commit -m'
+alias gits='git status'
+alias gita='git add *'
+
 # 开启系统代理
 function po() {
 	export http_proxy=http://127.0.0.1:7890
@@ -20,7 +25,7 @@ function pd(){
 	unset http_proxy
 	unset https_proxy
 	unset no_proxy
-  	unset HTTP_PROXY
+  unset HTTP_PROXY
 	unset HTTPS_PROXY
 	unset NO_PROXY
 	echo -e "\033[31m[×] 已关闭代理\033[0m"
