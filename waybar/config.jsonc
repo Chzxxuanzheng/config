@@ -1,0 +1,149 @@
+// -*- mode: jsonc -*-
+{
+  "height": 31, // Waybar height (to be removed for auto height)
+  "spacing": 5, // Gaps between modules (4px)
+  "margin": "5px",
+  "modules-left": [
+    "hyprland/workspaces",
+    "hyprland/window"
+  ],
+  "modules-center": [
+    "custom/label",
+  ],
+  "modules-right": [
+    "tray",
+    "mpd",
+    "pulseaudio",
+    "custom/network_and_bluetooth",
+    "custom/upcheck",
+    "custom/cpu_and_memory",
+    "clock"
+  ],
+  // Modules configuration
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "all-outputs": true,
+    "warp-on-scroll": false,
+    "format": "{icon}",
+    "format-icons": {
+      "1": "Ⅰ",
+      "2": "Ⅱ",
+      "3": "Ⅲ",
+      "4": "Ⅳ",
+      "5": "Ⅴ",
+      "6": "Ⅵ",
+      "7": "Ⅶ",
+      "8": "Ⅷ",
+      "9": "Ⅸ",
+      "10": "Ⅹ",
+      "urgent": "",
+      "focused": "",
+      "default": ""
+    }
+  },
+  "custom/cpu_and_memory": {
+    "exec": "python ~/config/waybar/cpu_memory.py",
+    "restart-interval": 1,
+  },
+  "custom/label": {
+    "format": "私愛フランドール•スカーレット"
+  },
+  "custom/upcheck": {
+    "exec": "python ~/config/waybar/upcheck.py",
+    "exec-if": "sleep 0.1", // 优先执行用户命令
+    "on-click": "kitty sh -c 'echo 检查更新ing;paru;pkill -SIGRTMIN+8 waybar'",
+    "interval": 3600,
+    "signal": 8,
+    "tooltip": true,
+    "format": "󰚰 {}",
+    // "tooltip-format": "{tooltip}",
+  },
+  "custom/network_and_bluetooth": {
+    "return-type": "json",
+    "exec": "python ~/config/waybar/network_and_bluetooth.py",
+    "interval": 3,
+    "format": "{text}",
+    "tooltip": true,
+    // "tooltip-format": "{tooltip}",
+    "on-click": "blueman-manager",
+  },
+  "bluetooth": {
+    "format": " 󰂯 ",
+    "tooltip": true,
+    "tooltip-format": "Bluetooth Settings",
+    "on-click": "blueman-manager",
+  },
+  "tray": {
+    "spacing": 10
+  },
+  "clock": {
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "format-alt": "{:%Y-%m-%d}"
+  },
+  "cpu": {
+    "format": "{usage}% ",
+    "tooltip": false
+  },
+  "memory": {
+    "format": "{}% "
+  },
+  "temperature": {
+    // "thermal-zone": 2,
+    // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+    "critical-threshold": 80,
+    // "format-critical": "{temperatureC}°C {icon}",
+    "format": "{temperatureC}°C {icon}",
+    "format-icons": [
+      "",
+      "",
+      ""
+    ]
+  },
+  "pulseaudio": {
+    // "scroll-step": 1, // %, can be a float
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": " {icon} {format_source}",
+    "format-muted": " {format_source}",
+    "format-source": "{volume}% ",
+    "format-source-muted": "",
+    "format-icons": {
+      "headphone": "",
+      "hands-free": "",
+      "headset": "",
+      "phone": "",
+      "portable": "",
+      "car": "",
+      "default": [
+        "",
+        "",
+        ""
+      ]
+    },
+    "on-click": "pavucontrol"
+  },
+  "custom/media": {
+    "format": "{icon} {}",
+    "return-type": "json",
+    "max-length": 40,
+    "format-icons": {
+      "spotify": "",
+      "default": "🎜"
+    },
+    "escape": true,
+    "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+    // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+  },
+  "custom/power": {
+    "format": "⏻ ",
+    "tooltip": false,
+    "menu": "on-click",
+    "menu-file": "$HOME/.config/waybar/power_menu.xml", // Menu file in resources folder
+    "menu-actions": {
+      "shutdown": "shutdown",
+      "reboot": "reboot",
+      "suspend": "systemctl suspend",
+      "hibernate": "systemctl hibernate"
+    }
+  }
+}
