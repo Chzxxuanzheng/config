@@ -4,29 +4,19 @@ alias ps='ps -ef | grep'
 alias sude='sudoedit'
 alias free='free -h'
 
+# 查看日志
+alias log='sudo journalctl'
+
 # git相关
 alias gitc='git commit -m'
 alias gits='git status'
 alias gita='git add *'
 
-# 开启系统代理
-function po() {
-	export http_proxy=http://127.0.0.1:7890
-	export https_proxy=http://127.0.0.1:7890
-	export no_proxy=127.0.0.1,localhost
-	export HTTP_PROXY=http://127.0.0.1:7890
-	export HTTPS_PROXY=http://127.0.0.1:7890
- 	export NO_PROXY=127.0.0.1,localhost
-	echo -e "\033[32m[√] 已开启代理\033[0m"
-}
+# systemd 相关的
+alias sys='systemctl'
+alias syu='systemctl --user'
 
-# 关闭系统代理
-function pd(){
-	unset http_proxy
-	unset https_proxy
-	unset no_proxy
-  unset HTTP_PROXY
-	unset HTTPS_PROXY
-	unset NO_PROXY
-	echo -e "\033[31m[×] 已关闭代理\033[0m"
-}
+# 花里胡哨的插件
+alias cat='bat'   # 有了vim为啥还有用这东西？
+alias ls='eza'
+alias ll='eza -l'

@@ -17,93 +17,82 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m╭──────────────────────硬件信息──────────────────────╮"
+      "format": "\u001b[96m╭──────────────────────硬件信息──────────────────────╮"
     },
     {
-      "type": "host",
-      "key": " PC",
+      "type": "title",
+      "key": " PC ",
       "keyColor": "green"
     },
     {
       "type": "cpu",
-      "key": "│ ├󰻠",
+      "key": "│ ├󰻠 ",
       "showPeCoreCount": true,
       "keyColor": "green"
     },
     {
       "type": "gpu",
-      "key": "│ ├󰍛",
+      "key": "│ ├󰍛 ",
       "keyColor": "green"
     },
     {
       "type": "memory",
-      "key": "└ └",
+      "key": "└ └ ",
       "keyColor": "green"
     },
     {
       "type": "custom",
-      "format": "\u001b[90m╰────────────────────────────────────────────────────╯"
+      "format": "\u001b[96m╰────────────────────────────────────────────────────╯"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m╭──────────────────────系统信息──────────────────────╮"
+      "format": "\u001b[96m╭──────────────────────系统信息──────────────────────╮"
     },
     {
       "type": "os",
-      "key": "󰣇 OS",
+      "key": "󰣇 OS ",
       "keyColor": "yellow"
     },
     {
       "type": "kernel",
-      "key": "│ ├",
+      "key": "│ ├ ",
       "keyColor": "yellow"
     },
     {
       "type": "packages",
-      "key": "│ ├󰏖",
+      "key": "│ ├󰏖 ",
       "keyColor": "yellow"
     },
     {
       "type": "shell",
-      "key": "└ └",
+      "key": "└ └ ",
       "keyColor": "yellow"
     },
     "break",
     {
       "type": "de",
-      "key": " DE",
+      "key": " DE ",
       "keyColor": "blue"
     },
     {
       "type": "lm",
-      "key": "│ ├",
+      "key": "│ ├ ",
       "keyColor": "blue"
     },
     {
       "type": "wm",
-      "key": "└ └",
+      "key": "└ └ ",
       "keyColor": "blue"
     },
-    /* {
-      "type": "wmtheme",
-      "key": "└ └󰉼",
-      "keyColor": "blue"
-    },*/
-    /* {
-      "type": "gpu",
-      "key": "└ └󰍛",
-      "format": "{3}",
-      "keyColor": "blue"
-    }, */
     {
       "type": "custom",
-      "format": "\u001b[90m╰────────────────────────────────────────────────────╯"
+      "format": "\u001b[96m╰────────────────────────────────────────────────────╯"
     },
     "break",
     {
       "type": "custom",
-      "format": "\u001b[90m╭──────────────────────运行时间──────────────────────╮"
+      "format": "\u001b[96m╭──────────────────────运行时间──────────────────────╮"
     },
     {
       "type": "command",
@@ -118,7 +107,7 @@
     },
     {
       "type": "custom",
-      "format": "\u001b[90m╰────────────────────────────────────────────────────╯"
+      "format": "\u001b[96m╰────────────────────────────────────────────────────╯"
     },
     "break"
   ]

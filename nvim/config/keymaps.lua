@@ -30,6 +30,8 @@ map("<C-q>", ":q<cr>", "退出")
 map("<C-s>", ":w<cr>", "保存")
 map("<C-z>", "u", "撤销")
 map("<C-S-Z>", "<C-r>", "重做")
+map("<Tab>", ">", "tab加缩进", "v")
+map("<S-Tab>", "<", "tab减少缩进", "v")
 
 -- 侧边栏
 map("<C-b>", ":Neotree toggle reveal<cr>", "打开侧边栏")
@@ -40,6 +42,15 @@ map("<C-a>", ":BufferLineCyclePrev<cr>", "转到左侧")
 map("<C-d>", ":BufferLineCycleNext<cr>", "转到右侧")
 map("<C-S-A>", ":BufferLineMovePrev<cr>", "移动到左侧")
 map("<C-S-D>", ":BufferLineMoveNext<cr>", "移动到右侧")
+
+-- 重命名
+map("<F2>", vim.lsp.buf.rename, "重命名")
+-- 转到定义
+map("<S-D>", vim.lsp.buf.definition, "转到定义")
+
+-- 折叠代码块
+map("<S-Z>", "zc", "折叠代码块")
+map("<S-X>", "zo", "展开代码块")
 
 -- 终端
 map("<C-t>", function()
