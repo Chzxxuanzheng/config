@@ -9,3 +9,7 @@ export NVM_DIR="$HOME/.nvm"
 
 # nnn
 source ~/config/nnn.sh
+
+# ssh密钥
+eval "$(ssh-agent -s)"
+ssh-add ~/.ssh/github
